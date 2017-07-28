@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBC NEWS</title>
+    <link rel="stylesheet" href="cssReset.css">
+    <style>
+        body {
+            font-family: Helvetica, Arial, SansSerif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: YELLOW;
+        }
+
+        #top-bar {
+            background-color: white;
+            border: 0px solid black;
+            font-size: 12px;
+            width: 1060px; /*  also for center oriented    */
+            margin: 0px auto; /*  for center oriented data    */
+            height: 40px;
+            padding: 0px;
+            font-weight: bold;
+        }
+
+        #top-bar a {
+            color: black;
+        }
+
+        #top-bar a:hover {
+            color: red;
+            text-decoration: double;
+        }
+
+        #logo {
+            border: 0px solid black;
+            float: left;
+            margin: 0px;
+            padding: 10px 18px 6px 15px;
+            border-bottom: 2px #cccccc solid;
+            border-top: 2px #cccccc solid;
+            /*height:100%;*/
+        }
+
+        #logo-img {
+            border: 0px solid darkgreen;
+            position: relative;
+            bottom: 3px;
+        }
+
+        .top-bar-item-float {
+            border: 0px solid yellow;
+            float: left;
+            text-align: center;
+            margin: 0px;
+            padding: 15px 20px 15px 20px;
+            border-left: 1px #cccccc solid;
+            border-bottom: 2px #cccccc solid;
+            border-top: 2px #cccccc solid;
+            /*height:100%;*/
+        }
+
+        #search-div {
+            border: 0px solid red;
+            float: left;
+            text-align: center;
+            margin: 0px;
+            padding: 10px 0px 4px 20px;
+            border-left: 1px #cccccc solid;
+            border-bottom: 2px #cccccc solid;
+            border-top: 2px #cccccc solid;
+            /*height:100%;*/
+        }
+
+        #search-box {
+            width: 180px;
+            background-color: #cccccc;
+            color: black;
+            border: none;
+            padding: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 0px solid black;
+            position: relative;
+            bottom: 5px;
+
+        }
+
+        #search-button {
+            position: relative;
+            right: 25px;
+            top: 0px;
+            margin-left: 0;
+        }
+
+        .clearing-div {
+            clear: both;
+        }
+
+        /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        = = = = = = = = = = = = = = = = = = = = = =      MENUE BAR  = = = = = = = = = = = = = = = = = = */
+
+        #menue-bar-container {
+            /*border:1px solid green;*/
+            width: 100%;
+            height: 70px;
+            background-color: #A91717;
+        }
+
+        #menue-bar {
+            width: 1060px; /*  also for center oriented    */
+            margin: 0px auto; /*  for center oriented data    */
+        }
+
+        #news-big-decoration {
+            border: 0px solid yellow;
+            color: white;
+            font-size: 50px;
+            font-family: Arial;
+            font-weight: normal;
+            position: relative;
+            top: 8px;
+            float: left;
+        }
+
+        #local-news {
+            color: white;
+            text-align: right;
+            border: 0px #B84545 solid;
+            float: right;
+            margin-top: 20px;
+            padding: 4px;
+        }
+
+        /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        = = = = = = = = = = = = = = = = == =      MENUE bar - 2  BAR  =  = = =  = = = = = = = = = = = = */
+
+        #menue-2-container {
+            background-color: #881919;
+            border: 0px solid yellow;
+            font-size: 12px;
+            width: 100%;
+            height: 30px;
+            padding: 0px;
+            font-weight: normal;
+        }
+
+        #m2-containter {
+            padding: 0px;
+            width: 1060px;; /*  for center oriented data    */
+            border: 0px solid blue;
+            position: relative;
+            margin-left: 190px;
+        }
+
+        .all-menue-options {
+            border: 0px solid green;
+            float: left;
+            /*text-align: center;*/
+            margin-top: 3px;
+            padding: 3px 20px 3px 20px;
+            border-left: 1px #B84545 solid;
+
+        }
+
+        #menue-2-container a {
+            color: white;
+        }
+
+        #menue-2-container a:hover {
+            color: red;
+            text-decoration: double;
+        }
+
+        /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+       = = = = = = = = = = = = = = = = == =     main body of the page  =  = = =  = = = = = = = = = = = = */
+
+        #Main-container {
+            width: 1060px;
+            margin: 60px auto;
+            border: 0px solid red;
+            height: 350px;
+        }
+        #Main-container a {
+            color: #a91717;
+        }
+
+        #Main-container a:hover {
+            color: blue;
+        }
+
+
+        /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+      = = = = = = = = = = = = = = = = == =     article container      =  = = =  = = = = = = = = = = = = */
+        #article-conatiner {
+            width: 680px;
+            border: 0px solid black;
+            height: 290px;
+            float: left;
+        }
+
+        #page-title {
+            font-size: 22px;
+            color: rgba(65, 65, 65, 0.98);
+            border-bottom: 3px solid #a91717;
+            position: relative;
+            top: 20px;
+            left: 100px;
+        }
+
+        #article-heading {
+            margin-top: 0px;
+            font-size: 29px;
+            font-weight: bold;
+        }
+
+        #article-content {
+            border: 0px solid red;
+            font-size: 16px;
+            color: #5a5a5a;
+            margin-top: 16px;
+            padding: 5px;
+            width: 262px;
+            height: 100px;
+            float: left;
+        }
+
+        #article-img {
+            border: 0px solid yellow;
+            margin-top: 14px;
+            float: left;
+        }
+
+        .bottom-details {
+            margin-top: 25px;
+            font-size: 13px;
+            float: left;
+        }
+
+        #time {
+            padding-bottom: 2px;
+            width: 70px;
+            border-bottom: 2px solid #a91717;
+        }
+
+        #title-bottom {
+            margin-left: 15px;
+            padding-left: 15px;
+            border-left: 1px solid #cccccc;
+        }
+
+
+
+        .bottom-links-style { /* its on a span not on a a*/
+            color: black;
+            padding-top: 9px;
+            font-size: 13px;
+            float: left;
+        }
+
+        .bottom-links :hover {
+            color: #1167a8;
+        }
+
+
+        #article-conatiner {
+            border-right: 2px solid #cccccc;
+            padding-right: 0px;
+        }
+
+        /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+      = = = = = = = = = = = = = = = = == =     video container      =  = = =  = = = = = = = = = = = = */
+
+        #videos-container {
+            background-color: #eeeeee;
+            width: 365px;
+            padding-left: 5px;
+            border: 0px solid black;
+            height:100%;/*height: 290px;*/
+            float: right;
+        }
+
+        #watch-listen {
+            font-weight:100;
+            font-size: x-large;
+            padding-bottom: 05px;
+        }
+
+        .videos {
+            border:0px solid red;
+            width: 100%;
+            height:75px;
+            padding-top: 13px;
+        }
+
+        .videos img {
+            padding-right: 3px;
+            float: left;
+        }
+
+        .video-headline :hover {
+            color: #1167a8;
+        }
+
+        .videos-headline-style { /* STYLE for video headline */
+            margin-left:4px;
+            float: left;
+            border:0px solid green;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            width:240px;
+            height:50px;
+        }
+
+        .video-bottom-details{
+            margin-left: 18px;
+            margin-top: 0px;
+            font-size: 13px;
+            float: left;
+        }
+
+        #time-posted {
+            border:0px solid red;
+            color: #5a5a5a;
+            padding-bottom: 2px;
+            width: 65px;
+            border-bottom: 2px solid #a91717;
+        }
+
+        #category-bottom-link{
+            margin-left: 15px;
+            padding-left: 15px;
+            border-left: 1px solid #cccccc;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<div id="top-bar">
+
+    <div id="logo">
+        <a href="#"> <img id="logo-img" src="images/bbc-blocks-dark.png" alt="logo"> </a>
+    </div>
+
+    <div class="top-bar-item-float">
+        <a href="#">Sign in</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">Notification</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">News</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">Sports</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">Whether</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">iPlayer</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">TV</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">Radio</a>
+    </div>
+    <div class="top-bar-item-float">
+        <a href="#">More</a>
+    </div>
+    <div id="search-div">
+        <input id="search-box" type="text" value="Search" placeholder="Search">
+        <input type="image" id="search-button" src="images/search-box.png">
+    </div>
+</div>
+
+
+<!-- = = = = == = = = == = = = == = = = == = = = == = = = ==        MNEWS BAR         = = = = == = = = == = = = == = = = == = = = == = = = =-->
+<div class="clearing-div"></div>
+
+
+<div id="menue-bar-container">
+    <div id="menue-bar">
+        <h1 id="news-big-decoration"> NEWS </h1>
+        <div id="local-news">
+            <a>Find local news &nbsp; &Oslash;</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- = = = = == = = = == = = = == = = = == = = = == = = = ==        MENUE BAR 2         = == = = = == = = = == = = = == = = = == = = = == = = = =-->
+<div class="clearing-div"></div>
+
+<div id="menue-2-container" class="m2-containter">
+
+    <div id="m2-containter" class="all-menue-options">
+        <div class="all-menue-options">
+            <a href="#">Home</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">UK</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">World</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Politics</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Business</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Tech</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Science</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Health</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Education</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Entertainment & Arts</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">Video & Audio</a>
+        </div>
+        <div class="all-menue-options">
+            <a href="#">More</a>
+        </div>
+    </div>
+
+
+    <div class="clearing-div"></div>
+
+    <span id="page-title">Technology</span>
+    <div id="clearing-div"></div>
+
+
+    <div id="Main-container">
+
+        <div id="article-conatiner">
+            <h2 id="article-heading">
+                Asda bug exposed payment details
+            </h2>
+            <div id="article-content">
+                <p>
+                    Security vulnerabilities that put customers at risk have affected Asda's website for a couple of
+                    years, a security expert has revealed.
+                </p>
+                <p id="time" class="bottom-details">
+                    2 hour ago
+                </p>
+                <a id="title-bottom" class="bottom-details">
+                    Technology
+                </a>
+
+                <div style="margin-top: 15px;" class="clearing-div"></div>
+
+                <a class="bottom-links" href="#.php"> <span class="bottom-links-style"> Surveillance firm hit in hack attack </span>
+                </a>
+                <a class="bottom-links" href="#.php"> <span class="bottom-links-style"> eBay flaw has existed for months <span>
+                </a>
+            </div>
+            <img id="article-img" src="images/asda.png" alt="asda-image">
+        </div>
+
+        <div id="videos-container">
+            <h3 id="watch-listen">
+                Watch/Listen
+            </h3>
+            <div class="videos">
+                <img src="images/speaker.png" alt="speaker">
+                <a class="video-headline"><h5 class="videos-headline-style">UK siencee chief backs blockchain</h5></a>
+                <p id="time-posted" class="video-bottom-details">
+                    2 hour ago
+                </p>
+                <a id="category-bottom-link" class="video-bottom-details">
+                    Technology
+                </a>
+            </div>
+
+            <div class="videos">
+                <img src="images/drone.png" alt="speaker">
+                <a class="video-headline"><h5 class="videos-headline-style">Drone register gives 'accountability'</h5></a>
+                <p id="time-posted" class="video-bottom-details">
+                    16 January
+                </p>
+                <a id="category-bottom-link" class="video-bottom-details">
+                    Technology
+                </a>
+            </div>
+
+            <div class="videos">
+                <img src="images/rocket.png" alt="speaker">
+                <a class="video-headline"><h5 class="videos-headline-style">UK siencee chief backs blockchain</h5></a>
+                <p id="time-posted" class="video-bottom-details">
+                    2 hour ago
+                </p>
+                <a id="category-bottom-link" class="video-bottom-details">
+                    science_and_environment
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
